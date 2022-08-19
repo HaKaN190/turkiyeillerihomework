@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    input[type=text], input[type=password]
+    {
+        width: 50%;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid whitesmoke;
+        color: black;
+        background-color: rgb(238, 208, 238);
+        border-radius: 10px;
+    }
+    input[type=text]:focus,input[type=password]:focus{
+        background-color: lightblue;
+    }
+    
+    input [type=submit] {
+     background-color: aqua; 
+     padding: 2px 15px;
+     border-radius: 10px;
+     font-size: 16px;
+     font-weight: bold;
+
+    }
+    div{
+        text-align: center;
+        margin-top:200px;
+    }
+   .but{
+
+    border: 1px solid turquoise;
+    margin: 5px;
+    padding:5px;
+    border-radius:5px;
+    font-size:20px;
+    color: darkcyan;
+
+   }
+
+   .but:hover{
+    background-color:white;
+   }
+   
+ 
+
+
+
+   
+</style>
+
+
+
+</head>
+
+<body>
+    
+    <h1 style="font: size 30px; color:turquoise ; text-align:center; " >HOŞGELDİNİZ</h1>
+    <div>
+        <h4 style="color: turquoise;">KULLANICI ADI :</h4>
+    <br><input type="text" id="isim">
+    <br>
+    <h4 style="color: turquoise;">ŞİFRE :</h4> 
+    <br><input type="password" id="parola"> 
+    <br><br>
+    <br>
+
+
+    <button class="but" type="button" onclick="kaydet()" >KAYIT OL </button>
+    <button class="but" type="button" onclick="kontrol()"> GİRİS YAP</button>
+</div>
+
+    <script>
+        function kaydet() {
+            var i = document.getElementById("isim").value;
+            var p = document.getElementById("parola").value;
+            localStorage.setItem('isim',i);
+            localStorage.setItem('parola',p);
+
+        }
+
+
+        function kontrol()
+        {
+        if(localStorage.getItem('parola')==document.getElementById("parola").value &&
+        localStorage.getItem('isim')==document.getElementById("isim").value ){
+            alert("giriş başarılı");
+        }
+        else {
+            alert("giriş başaraısız");
+        }
+        }
+
+
+    </script>
+</body>
+</html>
